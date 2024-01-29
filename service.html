@@ -27,62 +27,50 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-    /* For screens smaller than or equal to 768px (typical mobile screens) */
-@media (max-width: 768px) {
-  .gallery {
-    display: grid; /* Use grid display for better responsiveness */
-    grid-template-columns: 1fr; /* Display one column */
-    gap: 20px; /* Adjust margin between pictures */
-    margin: 0 auto; /* Center the gallery */
-  }
-
-  .image-container {
-    width: 100%; /* Set width to 100% */
-    height: auto; /* Set height to auto to adjust to image size */
-    overflow: hidden; /* Hide overflow content */
-  }
-}
-
-
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Display two columns */
-  gap: 20px; /* Add margin between pictures */
-  margin: 0 20px; /* Add left and right margin from the screen */
-}
-
-.image-container {
-  position: relative; /* Make the container div position-relative */
-  width: 100%; /* Set width to 100% */
-  height: 70%; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow content */
-}
-
-.image-container img {
-  width: 100%; /* Set width to 100% */
-  height: auto; /* Maintain aspect ratio */
-}
-
-
-.image-text {
-  position: absolute; /* Position the text absolutely */
-  bottom: 0; /* Align the text to the bottom */
-  left: 0; /* Align the text to the left */
-  width: 100%; /* Set the width to 100% to cover the entire container */
-  background-color: rgba(0, 0, 0, 0.5); /* Add background color with transparency */
-  color: white; /* Set text color to white */
-  padding: 10px; /* Add padding to the text */
-  margin: 0; /* Remove default margin */
-}
-.image-container:nth-child(3) {
-  margin-top: -100px; /* Set a larger top margin for the third image */
-}
-.image-container:nth-child(4) {
-  margin-top: -100px; /* Set a larger top margin for the fourth image */
-}
-</style>
+      <style>
+        .container {
+            padding: 0 15px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        .image-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -124,7 +112,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-paint-roller text-secondary me-3"></i>AG Painter & Decorator</h1>
+            <h1 class="m-0 text-uppercase text-primary"><!--<i class="fa fa-paint-roller text-secondary me-3">-->AG Painter & Decorator</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -278,39 +266,37 @@
     <!-- Testimonial End -->
     
     <!-- Pictures -->
-     <div class="container-fluid py-5">
+    <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h1 class="display-5">Professional Services</h1>
                 <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
             </div>
-             <div class="text-center mx-auto mb-5" style="max-width: 300px;">
+            <div class="text-center mx-auto mb-5" style="max-width: 300px;">
                 <h3 class="display-7">Painting & Decoration</h3>
                 <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
             </div>
-            
-<div class="gallery">
-  <div class="image-container">
-    <img src="img/paint1.jpg" alt="Image 1">
-    <p class="image-text">Before</p>
-  </div>
-  <div class="image-container">
-    <img src="img/paint1after.jpg" alt="Image 2">
-    <p class="image-text">After</p>
-  </div>
-   <div class="image-container">
-    <img src="img/paint2.jpg" alt="Image 3">
-   <!-- <p class="image-text">After</p>-->
-  </div>
-   <div class="image-container">
-    <img src="img/deco1.jpg" alt="Image 4">
-   <!-- <p class="image-text">After</p>-->
-  </div>
-  <!-- Add more image-container divs as needed -->
-</div>
-</div>
-</div>
-
+            <div class="gallery">
+                <div class="image-container">
+                    <img src="img/paint1.jpg" alt="Image 1">
+                    <p class="image-text">Before</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/paint1after.jpg" alt="Image 2">
+                    <p class="image-text">After</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/paint2.jpg" alt="Image 3">
+                    <!-- <p class="image-text">After</p> -->
+                </div>
+                <div class="image-container">
+                    <img src="img/deco1.jpg" alt="Image 4">
+                    <!-- <p class="image-text">After</p> -->
+                </div>
+                <!-- Add more image-container divs as needed -->
+            </div>
+        </div>
+    </div>
 <!-- Pictures end -->
 
 
@@ -359,7 +345,7 @@
                     <h4 class="text-primary">Get In Touch</h4>
                     <hr class="w-25 text-secondary mb-4" style="opacity: 1;">
                     <!--<p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>-->
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Swindon, United Kingdom</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>275 Two Mile Hill Rd, Bristol, UK</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Zefrrasi1940@icloud.com</p>
                     <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+44 7808 841466</p>
                 </div>
