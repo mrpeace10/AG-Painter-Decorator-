@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+     <link href="favicon/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,35 +27,91 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+    /* For screens smaller than or equal to 768px (typical mobile screens) */
+@media (max-width: 768px) {
+  .gallery {
+    display: grid; /* Use grid display for better responsiveness */
+    grid-template-columns: 1fr; /* Display one column */
+    gap: 20px; /* Adjust margin between pictures */
+    margin: 0 auto; /* Center the gallery */
+  }
+
+  .image-container {
+    width: 100%; /* Set width to 100% */
+    height: auto; /* Set height to auto to adjust to image size */
+    overflow: hidden; /* Hide overflow content */
+  }
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Display two columns */
+  gap: 20px; /* Add margin between pictures */
+  margin: 0 20px; /* Add left and right margin from the screen */
+}
+
+.image-container {
+  position: relative; /* Make the container div position-relative */
+  width: 100%; /* Set width to 100% */
+  height: 70%; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.image-container img {
+  width: 100%; /* Set width to 100% */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.image-text {
+  position: absolute; /* Position the text absolutely */
+  bottom: 0; /* Align the text to the bottom */
+  left: 0; /* Align the text to the left */
+  width: 100%; /* Set the width to 100% to cover the entire container */
+  background-color: rgba(0, 0, 0, 0.5); /* Add background color with transparency */
+  color: white; /* Set text color to white */
+  padding: 10px; /* Add padding to the text */
+  margin: 0; /* Remove default margin */
+}
+.image-container:nth-child(3) {
+  margin-top: -100px; /* Set a larger top margin for the third image */
+}
+.image-container:nth-child(4) {
+  margin-top: -100px; /* Set a larger top margin for the fourth image */
+}
+</style>
 </head>
 
 <body>
-    <!-- Topbar Start -->
+   <!-- Topbar Start -->
     <div class="container-fluid bg-primary d-none d-lg-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-dark py-2 pe-3 border-end border-white" href=""><i class="bi bi-telephone text-secondary me-2"></i>+012 345 6789</a>
-                        <a class="text-dark py-2 px-3" href=""><i class="bi bi-envelope text-secondary me-2"></i>info@example.com</a>
+                        <a class="text-dark py-2 pe-3 border-end border-white" href="tel:+447808841466"><i class="bi bi-telephone text-secondary me-2"></i>+44 7808 841466</a>
+<a class="text-dark py-2 px-3" href="mailto:Zefrrasi1940@icloud.com"><i class="bi bi-envelope text-secondary me-2"></i>Zefrrasi1940@icloud.com</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-body py-2 px-3 border-end border-white" href="">
+                        <a class="text-body py-2 px-3 border-end border-white" href="https://www.facebook.com/profile.php?id=100063719275046">
                             <i class="fab fa-facebook-f text-secondary"></i>
                         </a>
-                        <a class="text-body py-2 px-3 border-end border-white" href="">
-                            <i class="fab fa-twitter text-secondary"></i>
+                        <a class="text-body py-2 px-3 border-end border-white" href="https://wa.me/447808841466">
+                            <i class="fab fa-whatsapp text-secondary"></i>
                         </a>
-                        <a class="text-body py-2 px-3 border-end border-white" href="">
+                    <!--    <a class="text-body py-2 px-3 border-end border-white" href="">
                             <i class="fab fa-linkedin-in text-secondary"></i>
                         </a>
                         <a class="text-body py-2 px-3 border-end border-white" href="">
                             <i class="fab fa-instagram text-secondary"></i>
                         </a>
                         <a class="text-body py-2 ps-3" href="">
-                            <i class="fab fa-youtube text-secondary"></i>
+                            <i class="fab fa-youtube text-secondary"></i>-->
                         </a>
                     </div>
                 </div>
@@ -68,7 +124,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-paint-roller text-secondary me-3"></i>Painter</h1>
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-paint-roller text-secondary me-3"></i>AG Painter & Decorator</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -76,9 +132,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 pe-4 border-end border-5 border-primary">
                 <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link active">Service</a>
-                <div class="nav-item dropdown">
+                <a href="index.html#aboutus" class="nav-item nav-link">About</a>
+                <a href="index.html#services" class="nav-item nav-link active">Service</a>
+                <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
                         <a href="blog.html" class="dropdown-item">Blog Grid</a>
@@ -86,14 +142,15 @@
                         <a href="team.html" class="dropdown-item">The Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>-->
+                <a href="contact.html" class="nav-item nav-link ">Contact</a>
             </div>
             <div class="d-none d-lg-flex align-items-center ps-4">
                 <i class="fa fa-2x fa-mobile-alt text-secondary me-3"></i>
                 <div>
                     <h5 class="text-primary mb-1"><small>Call Now</small></h5>
-                    <h6 class="text-light m-0">+012 345 6789</h6>
+                    <h6 class="text-light m-0"><a href="tel:+447808841466" style="color: inherit; text-decoration: none;">+44 7808 841466</a></h6>
+
                 </div>
             </div>
         </div>
@@ -108,8 +165,8 @@
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="display-1 text-dark">Our Services</h1>
                     <div class="pt-2">
-                        <a href="" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Home</a>
-                        <a href="" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Our Services</a>
+                        <a href="index.html" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Home</a>
+                      <!--  <a href="" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Our Services</a>-->
                     </div>
                 </div>
             </div>
@@ -118,7 +175,7 @@
     <!-- Hero End -->
 
 
-    <!-- Services Start -->
+    <!-- Services Start 
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
@@ -186,7 +243,7 @@
     <!-- Services End -->
 
 
-    <!-- Testimonial Start -->
+    <!-- Testimonial Start 
     <div class="container-fluid bg-primary bg-testimonial py-5" style="margin: 90px 0;">
         <div class="container py-5">
             <div class="row g-0 justify-content-end">
@@ -219,6 +276,42 @@
         </div>
     </div>
     <!-- Testimonial End -->
+    
+    <!-- Pictures -->
+     <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h1 class="display-5">Professional Services</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+            </div>
+             <div class="text-center mx-auto mb-5" style="max-width: 300px;">
+                <h3 class="display-7">Painting & Decoration</h3>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+            </div>
+            
+<div class="gallery">
+  <div class="image-container">
+    <img src="img/paint1.jpg" alt="Image 1">
+    <p class="image-text">Before</p>
+  </div>
+  <div class="image-container">
+    <img src="img/paint1after.jpg" alt="Image 2">
+    <p class="image-text">After</p>
+  </div>
+   <div class="image-container">
+    <img src="img/paint2.jpg" alt="Image 3">
+   <!-- <p class="image-text">After</p>-->
+  </div>
+   <div class="image-container">
+    <img src="img/deco1.jpg" alt="Image 4">
+   <!-- <p class="image-text">After</p>-->
+  </div>
+  <!-- Add more image-container divs as needed -->
+</div>
+</div>
+</div>
+
+<!-- Pictures end -->
 
 
     <!-- About Start -->
@@ -243,13 +336,13 @@
     <!-- About End -->
 
 
-    <!-- Call To Action Start -->
-    <div class="container-fluid bg-primary bg-call-to-action py-5" style="margin-top: 90px;">
+     <!-- Call To Action Start -->
+    <div class="container-fluid bg-primary bg-call-to-actionn py-5" style="margin-top: 90px;">
         <div class="container py-5">
             <div class="row g-0 justify-content-start">
                 <div class="col-lg-6">
                     <h1 class="display-5 mb-4">Do You Have Any Project?</h1>
-                    <p class="fs-4 fw-normal">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat dolor rebum sit ipsum.</p>
+                    <p class="fs-4 fw-normal">Let's Bring Your Vision to Life! Contact Us Today to Get Started.</p>
                     <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Contact Us</a>
                 </div>
             </div>
@@ -258,57 +351,55 @@
     <!-- Call To Action Start -->
     
 
-    <!-- Footer Start -->
+   <!-- Footer Start -->
     <div class="container-fluid bg-dark bg-footer text-light py-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary">Get In Touch</h4>
                     <hr class="w-25 text-secondary mb-4" style="opacity: 1;">
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
+                    <!--<p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>-->
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Swindon, United Kingdom</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Zefrrasi1940@icloud.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+44 7808 841466</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary">Our Services</h4>
                     <hr class="w-25 text-secondary mb-4" style="opacity: 1;">
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Regular Painting</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Wall Painting</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Floor Coating</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Graffiti Removal</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Mildew Removal</a>
-                        <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Window Washing</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Painting & Decoration</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Wallpaper</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Flooring</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>PLastering</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Kitchen Fitting</a>
+                      <!--  <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Window Washing</a> -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary">Quick Links</h4>
                     <hr class="w-25 text-secondary mb-4" style="opacity: 1;">
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
-                        <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                        <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="index.html#aboutus"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-light mb-2" href="index.html#services"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                        <a class="text-light" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary">Newsletter</h4>
+             <div class="col-lg-3 col-md-6">
+                 <!--    <h4 class="text-primary">Newsletter</h4>
                     <hr class="w-25 text-secondary mb-4" style="opacity: 1;">
-                    <form action="">
+                      <form action="">
                         <div class="input-group">
                             <input type="text" class="form-control p-3 border-0" placeholder="Your Email">
                             <button class="btn btn-primary">Sign Up</button>
-                        </div>
+                        </div>-->
                     </form>
                     <h6 class="text-primary mt-4 mb-3">Follow Us</h6>
                     <div class="d-flex">
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://wa.me/447808841466"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100063719275046"><i class="fab fa-facebook-f"></i></a>
+                     <!--   <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a> -->
                     </div>
                 </div>
             </div>
@@ -318,10 +409,10 @@
         <div class="container">
             <div class="row g-0">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">Copyright &copy; <a class="text-dark fw-bold" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                    <p class="mb-md-0">Copyright &copy; <a class="text-dark fw-bold" href="index.html">AG Painter & Decorator</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-dark fw-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+                  <!--  <p class="mb-0">Designed by <a class="text-dark fw-bold" href="https://htmlcodex.com">HTML Codex</a></p>-->
                 </div>
             </div>
         </div>
